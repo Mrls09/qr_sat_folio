@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Validación CFDI - SAT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Verdana, sans-serif;
+      background-color: #1b3b40;
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      max-width: 420px;
+      margin: 0 auto;
+      background-color: #f4f1ed;
+      padding-bottom: 30px;
+      min-height: 100vh;
+    }
+
+    .header {
+      text-align: center;
+      padding: 15px;
+    }
+
+    .header img {
+      max-width: 90%;
+      margin-bottom: 10px;
+    }
+
+    .message-box {
+      background-color: #d9c3a4;
+      color: #333;
+      padding: 10px;
+      margin: 10px 20px;
+      border-left: 6px solid #3070b3;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .message-box::before {
+      content: "ℹ️ ";
+      font-weight: bold;
+    }
+
+    .section {
+      background-color: #fff;
+      margin: 15px 20px;
+      border: 1px solid #c2a877;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .section-header {
+      background-color: #c2a877;
+      color: #fff;
+      padding: 8px 12px;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .section-body {
+      padding: 10px 15px;
+      font-size: 14px;
+    }
+
+    .section-body p {
+      margin: 6px 0;
+    }
+
+    .label {
+      font-weight: bold;
+      display: inline-block;
+      width: 60px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <img src="assets/HACIENDA-SAT.jpg" alt="Encabezado SAT" style="width: 100%; max-width: 300px; margin-bottom: 10px;">
+    </div>
+
+    <div class="message-box">
+      La Opinión que verificó fue emitida por el Servicio de Administración Tributaria.
+    </div>
+
+    <div class="section">
+      <div class="section-header">Datos Generales Enviados</div>
+      <div class="section-body">
+        <p><span class="label">Folio:</span> <span id="folio1">---</span></p>
+        <p><span class="label">RFC:</span> <span id="rfc1">---</span></p>
+        <p><span class="label">Fecha:</span> <span id="fecha1">---</span></p>
+        <p><span class="label">Sentido:</span> Positivo</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">Datos Generales Consultados</div>
+      <div class="section-body">
+        <p><span class="label">Folio:</span> <span id="folio2">---</span></p>
+        <p><span class="label">RFC:</span> <span id="rfc2">---</span></p>
+        <p><span class="label">Fecha:</span> <span id="fecha2">---</span></p>
+        <p><span class="label">Sentido:</span> Positivo</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const d3 = params.get('D3') || '';
+    const [folio, rfc, fecha] = d3.split('_');
+
+    if (folio && rfc && fecha) {
+      document.getElementById('folio1').textContent = folio;
+      document.getElementById('folio2').textContent = folio;
+      document.getElementById('rfc1').textContent = rfc;
+      document.getElementById('rfc2').textContent = rfc;
+      document.getElementById('fecha1').textContent = fecha;
+      document.getElementById('fecha2').textContent = fecha;
+    }
+  </script>
+</body>
+</html>
