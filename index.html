@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Validación CFDI - SAT</title>
+  <title>Validador QR - SAT</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: Verdana, sans-serif;
+      font-family: "Montserrat", Verdana, sans-serif;
       background-color: #1b3b40;
       margin: 0;
       padding: 0;
@@ -15,74 +15,81 @@
     .wrapper {
       max-width: 420px;
       margin: 0 auto;
-      background-color: #f4f1ed;
-      padding-bottom: 30px;
+      background-color: #F1EDE8;
       min-height: 100vh;
     }
 
     .header {
       text-align: center;
-      padding: 15px;
+      background-color: white;
+      padding: 20px 0 10px;
     }
 
     .header img {
       max-width: 90%;
-      margin-bottom: 10px;
     }
 
     .message-box {
-      background-color: #d9c3a4;
-      color: #333;
-      padding: 10px;
-      margin: 10px 20px;
-      border-left: 6px solid #3070b3;
-      border-radius: 5px;
+      background: #c7a97f;
+      color: #000;
       font-size: 14px;
+      margin: 20px;
+      padding: 12px 15px 12px 45px;
+      border: 1px solid #bca17a;
+      border-radius: 8px;
+      position: relative;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      line-height: 1.4;
     }
 
     .message-box::before {
-      content: "ℹ️ ";
-      font-weight: bold;
+      content: "ℹ️";
+      font-size: 18px;
+      position: absolute;
+      left: 15px;
+      top: 12px;
     }
 
     .section {
-      background-color: #fff;
-      margin: 15px 20px;
+      margin: 20px;
       border: 1px solid #c2a877;
       border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      background-color: white;
     }
 
     .section-header {
-      background-color: #c2a877;
-      color: #fff;
-      padding: 8px 12px;
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px;
+      background: linear-gradient(to bottom, #f3f3f2, #b58e58);
+      color: #3d2d1b;
       font-size: 13px;
       font-weight: bold;
+      padding: 10px 12px;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      border-bottom: 1px solid #c2a877;
     }
 
     .section-body {
-      padding: 10px 15px;
+      padding: 12px 15px;
       font-size: 14px;
     }
 
     .section-body p {
-      margin: 6px 0;
+      margin: 10px 0;
     }
 
     .label {
       font-weight: bold;
       display: inline-block;
-      width: 60px;
+      width: 80px;
     }
   </style>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
   <div class="wrapper">
     <div class="header">
-      <img src="assets/HACIENDA-SAT.jpg" alt="Encabezado SAT" style="width: 100%; max-width: 300px; margin-bottom: 10px;">
+      <img src="assets/HACIENDA-SAT.jpg" alt="Encabezado SAT">
     </div>
 
     <div class="message-box">
@@ -105,7 +112,7 @@
         <p><span class="label">Folio:</span> <span id="folio2">---</span></p>
         <p><span class="label">RFC:</span> <span id="rfc2">---</span></p>
         <p><span class="label">Fecha:</span> <span id="fecha2">---</span></p>
-        <p><span class="label">Sentido: </span> Positivo</p>
+        <p><span class="label">Sentido:</span> Positivo</p>
       </div>
     </div>
   </div>
